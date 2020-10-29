@@ -14,7 +14,15 @@ solution(A,B):-
     testimony(A,B,'liar'),
     testimony(A,A,'liar').
 
+
 sol(A,B):-A='liar',not(solution(A,B));A='knight',solution(A,B).
+
+n_factorial(0, 1).
+n_factorial(N, F) :-
+        N #> 0,
+        N1 #= N - 1,
+        F #= N * F1,
+        n_factorial(N1, F1).
 
 puzzle([C,E,L,E,R,Y]+[P,E,P,P,E,R]+[S,A,G,E]=[G,A,R,L,I,C]):-
     Vars = [C,E,L,R,Y,P,S,A,G,I],
